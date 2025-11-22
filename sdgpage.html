@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN SDGs for LGBTQ+ Inclusion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: url("https://imgs.search.brave.com/I8w1BOmD1df7laST1eQs-s0l8JWTQM9HTPmfypu4CHE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIz/NDU0NTg5MS9waG90/by9uZXcteW9yay1u/ZXcteW9yay10aGUt/dW5pdGVkLW5hdGlv/bnMtaGVhZHF1YXJ0/ZXJzLXN0YW5kcy1p/bi1tYW5oYXR0YW4t/b24tc2VwdGVtYmVy/LTA5LWluLW5ldy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/Rk1iWVg1VldrYTV0/T2dWdXFVRUZqMFl2/RlVmN0hiXzVnbGlH/NnRRVE5sQT0");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: #8a7f83a8;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* HEADER */
+        header {
+            color: #d3cfcb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+
+        header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+        }
+
+       #logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* spacing between image and text */
+}
+
+#logo h4 {
+  line-height: 1.3;
+  color: #efe9e1; /* keeps the same header color */
+}
+
+        header h4 {
+            font-size: 18px;
+            font-weight: 650;
+            letter-spacing: 1px;
+        }
+
+        /* NAV */
+        nav {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            opacity: 0.9;
+            display: inline-block;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.255);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #d2003ffc;
+        }
+
+        /* FLEXBOX CONTAINER */
+       
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+        /* EACH CARD */
+      .card {
+    width: 30%;              /* 3 per row */
+    min-width: 280px;        /* stops shrinking too much */
+    background-color: #29281E;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(200, 159, 159, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+        .card:hover {
+            transform: translateY(-7px);
+            background-color: #48252F;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 150px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h1 {
+            color: #eeeeee;
+            margin-bottom: 8px;
+        }
+
+        .card h2 {
+            color: #eeeeee;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #eeeeee;
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1D2F16;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div id="logo">
+        <img src="logoimg.jpg" alt="Logo">
+        <h4>Prism <br> Archive</h4>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="home2.html" target="_blank">Home</a></li>
+            <li><a href="sdgpage.html" class="active" target="_blank">SDG</a></li>
+            <li><a href="History.html" target="_blank">History</a></li>
+            <li><a href="Schemes.html" target="_blank">Schemes</a></li>
+            <li><a href="Laws.html" target="_blank">Laws</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container">
+
+    <div class="card">
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg">
+        <h1>SDG 5</h1>
+        <h2>Gender Equality</h2>
+        <h3>Focuses on ending discrimination and supporting gender-diverse individuals.</h3>
+    </div>
+<br>
+<br>
+    <div class="card">
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg">
+        <h1>SDG 4</h1>
+        <h2>Quality Education</h2>
+        <h3>Ensures education access without discrimination for LGBTQ+ youth.</h3>
+    </div>
+<br>
+<br>
+    <div class="card">
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg">
+        <h1>SDG 10</h1>
+        <h2>Reduced Inequalities</h2>
+        <h3>Advocates equality regardless of identity or orientation.</h3>
+    </div>
+<br>
+<br>
+    <div class="card">
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg">
+        <h1>SDG 3</h1>
+        <h2>Good Health & Well-being</h2>
+        <h3>Supports universal, inclusive healthcare for LGBTQ+ communities.</h3>
+    </div>
+<br>
+<br>
+    <div class="card">
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg">
+        <h1>SDG 16</h1>
+        <h2>Peace, Justice & Institutions</h2>
+        <h3>Pushes for fair laws and protection from discrimination.</h3>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 | SDG Webpage for Program Project</p>
+</footer>
+
+</body>
+</html>

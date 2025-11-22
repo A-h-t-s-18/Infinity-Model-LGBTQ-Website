@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schemes & Support</title>
+
+  <!-- INTERNAL CSS STARTS HERE -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+  body {
+  background-image: url("https://imgs.search.brave.com/p-1X4dEvn0uH9kjoIpoaw2Td9n74lsGkw1oSoQl9RXs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ4/NTM1MzM0Ny9waG90/by9sZ2J0cWlhLW11/bHRpLWV0aG5pYy12/b2x1bnRlZXJzLXdp/dGgtcmFpbmJvdy1m/bGFncy1pbi1uZXct/eW9yay5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9R0tsWDN0/UU5VOXBFdGVJMDBJ/eGJIYkpfQk5KSWp5/ZkhjS2FYc1M0dWJf/RT0");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0b0507;
+  color: #efe9e1;
+}
+
+/* Smooth dark cinematic overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 12, 22, 0.55);
+  backdrop-filter: blur(1.6px);
+  z-index: -1;
+}
+
+
+    #logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* spacing between image and text */
+}
+
+#logo h4 {
+  line-height: 1.1;
+  color: #efe9e1; /* keeps the same header color */
+}
+
+
+    header {
+      color: #efe9e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px;
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    nav {
+      background-color: #fffefdc1;
+      padding: 15px;
+      border-radius: 5px;
+      opacity: 0.9;
+      display: inline-block;
+      box-shadow: 10px 10px 10px rgba(63,80,101,0.255);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #d2003ffc;
+    }
+
+    #section1 {
+      height: 50vh;
+      position: relative;
+      text-align: center;
+    }
+
+    #tagline {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f6ece4;
+    }
+
+    #tagline h1 {
+      font-size: 4em;
+      text-shadow: 10px 10px 10px #2b1b1b;
+    }
+
+    #tagline h3 {
+      margin-top: 10px;
+      font-size: 1.4em;
+      color: #e8dcd2;
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    #about {
+      background-color: #1d2f16;
+      color: #e7d4bb;
+    }
+
+    #solutions {
+      background-color: #e7d4bb;
+      color: #1d2f16;
+    }
+
+    #about_description,
+    #solutions_description {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    section img {
+      width: 350px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(50,45,41,0.3);
+    }
+
+    section p {
+      max-width: 500px;
+      font-size: 1.1em;
+      text-align: left;
+    }
+
+    .learn-more {
+      background-color: #72383D;
+      color: #EFE9E1;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px rgba(50,45,41,0.2);
+    }
+
+    .learn-more:hover {
+      background-color: #AC9C8D;
+      color: #322D29;
+      box-shadow: 0 0 15px rgba(172,156,141,0.6);
+    }
+
+    footer {
+      background-color: #1c0e02;
+      color: #EFE9E1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+  <!-- INTERNAL CSS ENDS HERE -->
+
+</head>
+
+<body>
+
+  <header class="nav-container">
+  <div id="logo">
+    <img src="logoimg.jpg" alt="Logo">
+    <h4>Prism <br> Archive</h4>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="home2.html">Home</a></li>
+      <li><a href="sdgpage.html">SDG</a></li>
+      <li><a href="History.html">History</a></li>
+      <li><a href="Schemes.html" class="active">Schemes</a></li>
+      <li><a href="Laws.html">Laws</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- HERO -->
+  <section id="section1">
+    <div id="tagline">
+      <h1>Schemes & Support</h1>
+      <h3>Government and Global Initiatives for LGBTQ+ Wellbeing</h3>
+    </div>
+  </section>
+
+  <!-- SMILE -->
+  <section id="about">
+    <h1>SMILE Scheme (Govt of India)</h1>
+    <div id="about_description">
+      <p>
+        SMILE provides scholarships, livelihood support, shelter homes, 
+        and skill development for transgender persons across India.
+      </p>
+      <img src="https://i.ibb.co/LGkw4vn/logo-22923-1659421907.jpg">
+    </div>
+    <button onclick="window.open('https://pib.gov.in/PressReleasePage.aspx?PRID=1802810','_blank')" class="learn-more">Official Govt Link</button>
+    <button onclick="window.open('https://socialjustice.gov.in','_blank')" class="learn-more">Ministry Website</button>
+  </section>
+
+  <!-- GARIMA GREH -->
+  <section id="solutions">
+    <h2>Garima Greh – Shelter Homes for Transgender Persons</h2>
+    <div id="solutions_description">
+      <img src="https://i.ibb.co/XZyHY43K/Garima-Greh-Shelter-Homes-For-Transpersons.jpg">
+      <p>
+        Garima Greh provides safe housing, counselling, food, healthcare, 
+        and skill training for transgender individuals facing homelessness.
+      </p>
+    </div>
+    <button onclick="window.open('https://pib.gov.in/PressReleasePage.aspx?PRID=1678978','_blank')" class="learn-more">Official Govt Link</button>
+  </section>
+
+  <!-- TRANSGENDER WELFARE -->
+  <section id="about">
+    <h1>Transgender Welfare Programme</h1>
+    <div id="about_description">
+      <p>
+        The programme offers identity cards, scholarships, healthcare support, 
+        and employment opportunities for transgender persons.
+      </p>
+      <img src="https://i.ibb.co/ynxcHg3k/lgbtq-rights-activism-flat-design-front-view-protest-theme-cartoon-drawing-complementary-color-schem.webp">
+    </div>
+    <button onclick="window.open('https://transgender.dosje.gov.in','_blank')" class="learn-more">National Portal</button>
+    <button onclick="window.open('https://services.india.gov.in/service/detail/register-as-an-applicant-for-transgender-certificate-and-identity-card','_blank')" class="learn-more">Apply for ID</button>
+  </section>
+
+  <!-- UN FREE & EQUAL -->
+  <section id="solutions">
+    <h2>UN Free & Equal Campaign</h2>
+    <div id="solutions_description">
+      <img src="https://i.ibb.co/FL5ybP1s/lgbtiq-card-images-free-and-equal.png">
+      <p>
+        A global United Nations initiative promoting equality, legal reforms 
+        and LGBTQ+ human rights protections worldwide.
+      </p>
+    </div>
+    <button onclick="window.open('https://www.unfe.org','_blank')" class="learn-more">Visit UN Free & Equal</button>
+  </section>
+
+  <!-- EMPLOYMENT -->
+  <section id="about">
+    <h1>Employment Support</h1>
+    <div id="about_description">
+      <p>
+        NGOs and organizations provide job placements, training and workplace 
+        inclusion support for LGBTQ+ individuals.
+      </p>
+      <img src="https://i.ibb.co/Vp5WfxHw/LGBTQ-in-the-Workplace.jpg">
+    </div>
+    <button onclick="window.open('https://www.periferry.com','_blank')" class="learn-more">PeriFerry</button>
+    <button onclick="window.open('https://humsafar.org','_blank')" class="learn-more">Humsafar Trust</button>
+    <button onclick="window.open('https://www.nazindia.org','_blank')" class="learn-more">Naz Foundation</button>
+  </section>
+
+  <!-- HEALTHCARE -->
+  <section id="solutions">
+    <h2>Healthcare Schemes & Support</h2>
+    <div id="solutions_description">
+      <img src="https://i.ibb.co/ZpWXy6gS/OIP-2.jpg">
+      <p>
+        Includes free HIV testing, ART treatment, mental health counselling 
+        and transgender health guidelines.
+      </p>
+    </div>
+    <button onclick="window.open('https://www.naco.gov.in','_blank')" class="learn-more">NACO</button>
+    <button onclick="window.open('https://www.saathii.org','_blank')" class="learn-more">SAATHII</button>
+    <button onclick="window.open('https://main.mohfw.gov.in/basicpage/transgender-health','_blank')" class="learn-more">Govt Guidelines</button>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="about">
+    <h1>Education Support & Scholarships</h1>
+    <div id="about_description">
+      <p>
+        India provides inclusive higher-education scholarships and grievance 
+        portals to support transgender and LGBTQ+ students.
+      </p>
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+    </div>
+    <button onclick="window.open('https://scholarships.gov.in','_blank')" class="learn-more">National Scholarship Portal</button>
+    <button onclick="window.open('https://socialjustice.gov.in','_blank')" class="learn-more">SMILE Education Aid</button>
+    <button onclick="window.open('https://www.ugc.gov.in','_blank')" class="learn-more">UGC Scholarships</button>
+    <button onclick="window.open('https://ncpcr.gov.in','_blank')" class="learn-more">Education Rights</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+

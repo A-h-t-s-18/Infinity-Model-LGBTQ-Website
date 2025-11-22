@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGBTQ+ Laws — Prism Archive</title>
+
+<style>
+/* ROOT COLORS — EXACT SAME AS SCHEMES PAGE */
+:root{
+    --dark-green: #1d2f16;
+    --beige: #e7d4bb;
+    --btn: #72383D;
+    --btn-hover: #AC9C8D;
+    --cream: #EFE9E1;
+    --overlay: #45232da8;
+    --footer: #1c0e02;
+}
+
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+body{
+    background-image: url("https://imgs.search.brave.com/cbDyLWu23_am2QnP-W634RgE1u5hwM3ctjomNOEeOaU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YW1lcmljYW5wcm9n/cmVzcy5vcmcvd3At/Y29udGVudC91cGxv/YWRzL3NpdGVzLzIv/MjAyMS8wNC9HZXR0/eUltYWdlcy0xMjI4/ODU5NTY4LmpwZz93/PTEwNDA");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #0b0507;
+    color: var(--cream);
+}
+
+/* Clean smooth overlay */
+body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 10, 25, 0.55);
+    backdrop-filter: blur(1.8px);
+    z-index: -1;
+}
+
+/* HEADER (EXACT FROM SCHEMES PAGE) */
+header{
+    color: #d3cfcb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+#logo{display:flex;align-items:center;gap:10px;}
+header img{
+    width: 60px;height:60px;border-radius:5px;
+}
+nav{
+    background-color: #f9f7f5e3;
+    padding: 15px;
+    border-radius:5px;
+    opacity:0.9;
+    display: inline-block;
+    box-shadow:10px 10px 10px rgba(24, 25, 27, 0.255);
+}
+nav ul{list-style:none;
+  display:flex;
+  gap:25px;}
+nav ul li a{
+    color:#1c1205;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active{
+  color:#d2003ffc;
+}
+
+/* SECTION WRAPPER */
+.section{
+    width: 100%;
+    margin: 0px auto;
+    padding: 60px 40px;
+}
+
+/* ALTERNATING COLORS EXACTLY LIKE SCHEMES PAGE */
+.section.dark{background: var(--dark-green);color:var(--beige);}
+.section.beige{background: var(--beige);color: var(--dark-green);}
+
+.section h2{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:25px;
+}
+
+/* TIMELINE */
+.timeline-item{
+    background: rgba(255,255,255,0.08);
+    padding:18px;
+    margin-bottom:14px;
+    border-left:6px solid var(--btn);
+    border-radius:8px;
+}
+
+/* LAW CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    border-radius: 12px;
+}
+.card{
+    padding:20px;
+    background:rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 28px rgba(0,0,0,0.4);
+}
+.icon{
+    width:80px;height:80px;border-radius:10px;
+    background:rgba(255,255,255,0.13);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 10px;
+}
+
+/* RIGHTS */
+.rights-list{list-style:none;max-width:700px;margin:0 auto;}
+.rights-list li{
+    background:rgba(255,255,255,0.15);
+    padding:12px;border-radius:8px;
+    margin-bottom:10px;
+    display:flex;align-items:center;gap:10px;
+}
+
+/* MYTH FACT */
+.mythfact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.mf-box{
+    background:rgba(255,255,255,0.15);
+    padding:18px;border-radius:10px;
+}
+
+/* COMPARISON TABLE */
+table{
+    width:100%;border-collapse:collapse;margin-top:20px;
+}
+th,td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+/* FAQ */
+.faq-item{
+    background:rgba(255,255,255,0.15);
+    padding:15px;border-radius:10px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+.faq-body{
+    max-height:0;overflow:hidden;
+    transition:max-height .4s ease;
+    margin-top:10px;
+}
+
+/* BUTTONS EXACT LIKE SCHEMES */
+.learn-more, .btn{
+    background-color: var(--btn);
+    color: var(--cream);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(50, 45, 41, 0.2);
+}
+.learn-more:hover, .btn:hover{
+    background-color: var(--btn-hover);
+    color: var(--dark-green);
+}
+
+/* QUIZ */
+.quiz-question{margin-bottom:25px;}
+.option{
+    background:rgba(255,255,255,0.2);
+    padding:12px;border-radius:8px;
+    margin-top:8px;cursor:pointer;
+}
+.option:hover{background:rgba(255,255,255,0.3);}
+.option.selected{background:var(--btn-hover);color:var(--dark-green);}
+.option.correct{outline:3px solid rgb(98,235,123);}
+.option.wrong{outline:3px solid rgb(255,100,100);}
+
+#submitQuiz, #refreshQuiz{
+    margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+    background:var(--footer);
+    color:var(--cream);
+    padding:20px;text-align:center;
+    margin-top:0px;
+}
+#tagline h1 {
+      font-size: 4em;
+      text-shadow: 10px 10px 10px #2b1b1b;
+    }
+
+    #tagline h3 {
+      margin-top: 10px;
+      font-size: 1.4em;
+      color: #e8dcd2;
+    }
+     #section1 {
+      height: 50vh;
+      position: relative;
+      text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+<header class="nav-container">
+  <div id="logo">
+    <img src="logoimg.jpg" alt="Logo">
+    <h4>Prism <br> Archive</h4>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="home2.html">Home</a></li>
+      <li><a href="sdgpage.html">SDG</a></li>
+      <li><a href="History.html">History</a></li>
+      <li><a href="Schemes.html">Schemes</a></li>
+      <li><a href="Laws.html" class="active">Laws</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<br>
+<section id="section1">
+    <div id="tagline">
+      <h1>LGBTQ+ Laws & Rights</h1>
+      <h3>Explore the timeline, major rulings, legal protections, myths vs facts, and test your knowledge with a dynamic quiz.</h3>
+    </div>
+  </section>
+
+<!-- TIMELINE -->
+<section class="section beige">
+  <h2>Legal Timeline</h2>
+
+  <div class="timeline-item"><strong>1860:</strong> Section 377 introduced under British rule.</div>
+  <div class="timeline-item"><strong>2009:</strong> Delhi High Court decriminalizes homosexuality.</div>
+  <div class="timeline-item"><strong>2013:</strong> Supreme Court restores Section 377.</div>
+  <div class="timeline-item"><strong>2014:</strong> NALSA recognizes transgender rights.</div>
+  <div class="timeline-item"><strong>2018:</strong> Supreme Court reads down Section 377.</div>
+  <div class="timeline-item"><strong>2019:</strong> Transgender Persons (Protection of Rights) Act.</div>
+</section>
+
+<!-- MAJOR LAWS -->
+<section class="section dark">
+  <h2>Major Laws & Judgements</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">
+        <svg width="48" height="48"><rect x="3" y="3" width="42" height="14" fill="#EFE9E1"/></svg>
+      </div>
+      <h3>Section 377</h3>
+      <p>Decriminalized in 2018, restoring dignity and freedom to the LGBTQ+ community.</p>
+      <button class="learn-more">Learn More</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg width="48" height="48"><circle cx="24" cy="24" r="18" fill="#EFE9E1"/></svg>
+      </div>
+      <h3>NALSA (2014)</h3>
+      <p>Supreme Court recognizes transgender identity and equal rights.</p>
+      <button class="learn-more">Learn More</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg width="48" height="48"><rect x="8" y="8" width="32" height="32" fill="#EFE9E1"/></svg>
+      </div>
+      <h3>Transgender Persons Act</h3>
+      <p>Legal protections and rights for transgender persons across India.</p>
+      <button class="learn-more">Official Portal</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- RIGHTS -->
+<section class="section beige">
+  <h2>Know Your Rights</h2>
+
+  <ul class="rights-list">
+    <li>✔ Right to Equality & Dignity</li>
+    <li>✔ Right to Privacy</li>
+    <li>✔ Right to Freedom of Expression</li>
+    <li>✔ Right to Gender Identity</li>
+    <li>✔ Right Against Discrimination</li>
+  </ul>
+</section>
+
+<!-- MYTH vs FACT -->
+<section class="section dark">
+  <h2>Myth vs Fact</h2>
+
+  <div class="mythfact">
+    <div class="mf-box">
+      <strong>Myth:</strong> “Transgender people need surgery to be recognized.”
+      <br><br>
+      <strong>Fact:</strong> Self-identification is valid (NALSA, 2014).
+    </div>
+
+    <div class="mf-box">
+      <strong>Myth:</strong> “LGBTQ+ rights are not in the Indian Constitution.”
+      <br><br>
+      <strong>Fact:</strong> Articles 14, 15, 19 & 21 protect gender & sexuality rights.
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL COMPARISON -->
+<section class="section beige">
+  <h2>Global Comparison</h2>
+
+  <table>
+    <tr><th>Country</th><th>Marriage</th><th>Adoption</th><th>Gender Recognition</th></tr>
+    <tr><td>India</td><td>No</td><td>Limited</td><td>Yes (NALSA)</td></tr>
+    <tr><td>USA</td><td>Yes</td><td>Yes</td><td>Varies</td></tr>
+    <tr><td>UK</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Canada</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+  </table>
+</section>
+
+
+<!-- QUIZ -->
+<section class="section dark">
+  <h2>Quick Quiz</h2>
+  <div id="quiz-container"></div>
+
+  <button id="submitQuiz" class="btn">Submit</button>
+  <button id="refreshQuiz" class="btn">Refresh Quiz</button>
+
+  <p id="score" style="margin-top:15px;font-weight:bold;"></p>
+</section>
+
+<footer>
+  &copy; 2025 Prism Archive. All Rights Reserved.
+</footer>
+
+<script>
+
+/* QUIZ SYSTEM */
+const quizBank=[
+  {q:"When was Section 377 struck down?",o:["2009","2018","2013"],a:1},
+  {q:"Which judgment protects transgender rights?",o:["NALSA","UAPA","Koushal"],a:0},
+  {q:"Which article protects privacy?",o:["14","21","32"],a:1},
+  {q:"Trans Act was passed in?",o:["2018","2019","2016"],a:1},
+  {q:"Which court gave NALSA ruling?",o:["SC","HC","District"],a:0},
+  {q:"Gender identity is based on?",o:["Medical proof","Self ID","Family approval"],a:1},
+  {q:"LGBTQ rights are protected under?",o:["Articles 14,15,19,21","Only 377"],a:0},
+  {q:"India allows same-sex marriage?",o:["Yes","No","Only civil unions"],a:1},
+  {q:"Trans ID can be applied through?",o:["UPSC","RTO","National Trans Portal"],a:2},
+  {q:"2018 judgement is called?",o:["Johar case","Verma case","Sabarimala"],a:0}
+];
+
+let currentQuestions=[];
+
+function loadQuiz(){
+  currentQuestions=[];
+  document.getElementById("score").innerHTML="";
+  let used=new Set();
+  while(currentQuestions.length<3){
+    let r=Math.floor(Math.random()*quizBank.length);
+    if(!used.has(r)){used.add(r);currentQuestions.push(quizBank[r]);}
+  }
+  let quizHTML="";
+  currentQuestions.forEach((q,i)=> {
+    quizHTML+=`<div class="quiz-question" data-index="${i}">
+      <strong>${i+1}. ${q.q}</strong>
+      <div class="option" onclick="selectOption(this,${i},0)">A) ${q.o[0]}</div>
+      <div class="option" onclick="selectOption(this,${i},1)">B) ${q.o[1]}</div>
+      <div class="option" onclick="selectOption(this,${i},2)">C) ${q.o[2]}</div>
+    </div>`;
+  });
+  document.getElementById("quiz-container").innerHTML=quizHTML;
+}
+
+let userAnswers={};
+
+function selectOption(el,qIndex,optIndex){
+  userAnswers[qIndex]=optIndex;
+  // remove highlight
+  el.parentElement.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
+  el.classList.add("selected");
+}
+
+document.getElementById("submitQuiz").onclick=function(){
+  let score=0;
+  document.querySelectorAll(".quiz-question").forEach((qEl,i)=>{
+    let correct=currentQuestions[i].a;
+    let chosen=userAnswers[i];
+    let opts=qEl.querySelectorAll(".option");
+
+    if(chosen===correct){
+      score++;
+      opts[chosen].classList.add("correct");
+    }else{
+      if(chosen!==undefined) opts[chosen].classList.add("wrong");
+      opts[correct].classList.add("correct");
+    }
+  });
+  document.getElementById("score").innerHTML="Score: "+score+" / 3";
+};
+
+document.getElementById("refreshQuiz").onclick=function(){
+  userAnswers={};
+  loadQuiz();
+};
+
+loadQuiz();
+</script>
+
+</body>
+</html>
+
+
